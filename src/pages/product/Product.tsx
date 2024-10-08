@@ -1,15 +1,22 @@
-import Single from "../../components/single/Single"
-import { singleProduct } from "../../data"
-import "./product.scss"
+import Single from "../../components/single/Single";
+import { singleProduct } from "../../data"; // Ensure this is correctly importing your data
+import "./product.scss";
 
 const Product = () => {
+  // Use the first product from singleProduct array
+  const product = singleProduct[0];
 
-  //Fetch data and send to Single Component
   return (
     <div className="product">
-       <Single {...singleProduct}/>
+      <Single
+        id={product.id}
+        title={product.productName}
+        info={product.info}
+        chart={product.chart}
+        activities={product.activities}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default Product
+export default Product;
